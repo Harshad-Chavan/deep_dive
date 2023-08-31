@@ -26,16 +26,30 @@ from typing import List
 #
 # common_elements = str1.intersection(str2)
 # print(common_elements)
+#
+# class Solution:
+#     def plusOne(self, digits: List[int]) -> List[int]:
+#         multiplier = 1
+#         end_value = 0
+#         for _ in digits[::-1]:
+#             end_value += _ * multiplier
+#             multiplier *= 10
+#         end_value += 1
+#         return [int(digit) for digit in str(end_value)]
+#
+#
+# print(Solution().plusOne(digits=[1,2,3]))
+
 
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
-        multiplier = 1
-        end_value = 0
-        for _ in digits[::-1]:
-            end_value += _ * multiplier
-            multiplier *= 10
-        end_value += 1
-        return [int(digit) for digit in str(end_value)]
+    def isHappy(self, n: int) -> bool:
+        # code to split the number
+        result_set = set()
+        while n != 1:
+            n = sum([int(_)**2 for _ in str(n)])
+            if n in result_set:
+                return False
+            result_set.add(n)
+        return True
 
-
-print(Solution().plusOne(digits=[1,2,3]))
+print(Solution().isHappy(2))
