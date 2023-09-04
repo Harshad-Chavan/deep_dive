@@ -13,13 +13,17 @@ class Account:
     # using the itertools.count instead of a variable this is a kind of generator
     global_transaction_id = itertools.count(0)
 
-    interest_rate = 0.5
+    _interest_rate = 0.5
 
-    def __init__(self, account_number, first_name, last_name):
+    def __init__(self, account_number, first_name, last_name, initial_balance=0, timezone=None):
         self._account_number = account_number
         self._first_name = first_name
         self._last_name = last_name
-        self._balance = 0.0
+        self._balance = float(initial_balance)
+
+        if timezone is None:
+            timezone = Timezone("UTC", 0, 0)
+        self.timezone = timezone
 
     @staticmethod
     def validate_name(value, field_title):
@@ -61,6 +65,16 @@ class Account:
         return f"{self.first_name} {self.last_name}"
 
     @property
+    def timezone(self):
+        return self._timezone
+
+    @timezone.setter
+    def timezone(self, value):
+        if not isinstance(value, Timezone):
+            raise ValueError("Time Zone must be a valid TimeZone object.")
+        self._timezone = value
+
+    @property
     def balance(self):
         return self._balance
 
@@ -79,7 +93,7 @@ class Account:
             return self.generate_confirmation_number("withdrawal", self.account_number)
 
     def deposit_interest(self):
-        interest_amount = self.balance * 0.05
+        interest_amount = self.balance * (Account.get_interest_rate() / 100)
         self.deposit(interest_amount)
         return self.generate_confirmation_number("interest_deposit", self.account_number)
 
@@ -97,12 +111,24 @@ class Account:
 
         return ConfirmationCode(code)
 
+    @classmethod
+    def get_interest_rate(cls):
+        return cls._interest_rate
+
+    @classmethod
+    def set_interest_rate(cls, value):
+        if not isinstance(value, numbers.Real):
+            raise ValueError("Interest must be a real number")
+        if value < 0:
+            raise ValueError("Interest cannot be Negative")
+        cls._interest_rate = value
+
 
 class Timezone:
-    def __init(self, name, offset_hours, offset_mins):
+    def __init__(self, name, offset_hours, offset_mins):
         if name is None or len(str(name).strip()) == 0:
             raise ValueError("Timezone name cannot be empty.")
-        self._name = str(name).name
+        self._name = str(name)
 
         if not isinstance(offset_hours, numbers.Integral):
             raise ValueError("offset hours must be an integer")
@@ -160,3 +186,5 @@ print(acc_2.balance)
 
 print(acc_1.withdrawal(50))
 print(acc_2.withdrawal(40))
+
+print(acc_1.timezone)
