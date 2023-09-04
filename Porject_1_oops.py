@@ -1,5 +1,6 @@
 import decimal
-from datetime import datetime
+import numbers
+from datetime import datetime, timedelta
 
 global_account_set = set()
 
@@ -83,7 +84,42 @@ class ConfirmationCode:
 
 
 class Timezone:
-    pass
+    def __init(self, name, offset_hours, offset_mins):
+        if name is None or len(str(name).strip()) == 0:
+            raise ValueError("Timezone name cannot be empty.")
+        self._name = str(name).name
+
+        if not isinstance(offset_hours, numbers.Integral):
+            raise ValueError("offset hours must be an integer")
+
+        if not isinstance(offset_mins, numbers.Integral):
+            raise ValueError("offset mins must be an integer")
+
+        if offset_mins > 59 or offset_mins < -59:
+            raise ValueError("Minutes offset must be in betwwen -59 and 59 (inclusive)")
+
+        offset = timedelta(hours=offset_hours, minutes=offset_mins)
+
+        if offset < timedelta(hours=-12, minutes=0) or offset > timedelta(hours=14, minutes=0):
+            raise ValueError("Offset must be between -12:00 to 14:00")
+
+        self._offset_hours = offset_hours
+        self._offset_mins = offset_mins
+        self._offset = offset
+
+    @property
+    def offset(self):
+        return self._offset
+
+    @property
+    def name(self):
+        return self._name
+
+    def __eq__(self, other):
+        return isinstance(other, Timezone) & self.name == other.name & self.offset == other.offset
+
+    def __repr__(self):
+        return f"Timezone(name:{self.name},offset_hours={self._offset_hours},offset_mins={self._offset_mins})"
 
 
 acc_1 = Account(1235, "Harshad", "Chavan")
