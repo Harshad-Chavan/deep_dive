@@ -1,6 +1,7 @@
 import decimal
 import numbers
 from datetime import datetime, timedelta
+import itertools
 
 global_account_set = set()
 
@@ -8,7 +9,10 @@ global_account_set = set()
 class Account:
 
     transaction_type = {"deposit": "D", "withdrawal": "W", "interest_deposit": "I", "declined": "X"}
-    global_transaction_id = 0
+
+    # using the itertools.count instead of a variable this is a kind of generator
+    global_transaction_id = itertools.count(0)
+
     interest_rate = 0.5
 
     def __init__(self, account_number, first_name, last_name):
@@ -16,6 +20,12 @@ class Account:
         self._first_name = first_name
         self._last_name = last_name
         self._balance = 0.0
+
+    @staticmethod
+    def validate_name(value, field_title):
+        if value is None or len(value.strip()) == 0:
+            raise ValueError(f"{field_title} cannot be empty")
+        return value
 
     @property
     def account_number(self):
@@ -34,7 +44,8 @@ class Account:
 
     @first_name.setter
     def first_name(self, value):
-        self._first_name = value
+        # adding some validation
+        self._first_name = Account.validate_name(value, "First name")
 
     @property
     def last_name(self):
@@ -42,7 +53,8 @@ class Account:
 
     @first_name.setter
     def last_name(self, value):
-        self._last_name = value
+        # adding some validation
+        self._last_name = Account.validate_name(value, "Last name")
 
     @property
     def full_name(self):
@@ -74,13 +86,16 @@ class Account:
     @classmethod
     def generate_confirmation_number(cls, transaction_type, acc_num):
         current_date_time = datetime.now().utcnow().strftime("%Y%m%d%H%M%S")
-        cls.global_transaction_id += 1
-        return f"{cls.transaction_type[transaction_type]}-{acc_num}-{current_date_time}-{cls.global_transaction_id}"
+        return (
+            f"{cls.transaction_type[transaction_type]}-{acc_num}-{current_date_time}-{next(cls.global_transaction_id)}"
+        )
 
+    def generate_confirmation_number_object(self, code):
+        class ConfirmationCode:
+            def __init__(self, code):
+                self.transaction_code, self.account_number, self.time_utc, self.transaction_id = code.split("-")
 
-class ConfirmationCode:
-    def __init__(self, code):
-        self.transaction_code, self.account_number, self.time_utc, self.transaction_id = code.split("-")
+        return ConfirmationCode(code)
 
 
 class Timezone:
@@ -145,5 +160,3 @@ print(acc_2.balance)
 
 print(acc_1.withdrawal(50))
 print(acc_2.withdrawal(40))
-
-print(ConfirmationCode(acc_1.withdrawal(10)))
