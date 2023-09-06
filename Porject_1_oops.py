@@ -81,7 +81,7 @@ class Account:
         return self._balance
 
     def deposit(self, amount):
-        if amount < 0:
+        if amount <= 0:
             return self.generate_confirmation_code("declined", self.account_number)
         else:
             self._balance = self._balance + amount

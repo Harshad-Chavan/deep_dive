@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d37e61-2035-47a4-8224-35b69091d6ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/day_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/decorators_primer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_basics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_deep_dive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/python_deep_dive.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Porject_1_oops.py" beforeDir="false" afterPath="$PROJECT_DIR$/Porject_1_oops.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +41,8 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/harshad/Desktop/workspace/python_deep_dive&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="day_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Porject_1_oops">
+    <configuration name="Porject_1_oops" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,7 +54,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Porject_1_oops.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,7 +63,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="day_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="day_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,7 +75,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day_4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Porject_1_oops" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.day_4" />
         <item itemvalue="Python.decorators_primer" />
         <item itemvalue="Python.module_basics" />
-        <item itemvalue="Python.day_3" />
-        <item itemvalue="Python.day_2" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +173,71 @@
       <option name="project" value="LOCAL" />
       <updated>1677901351460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="python deep dive day 1 and 2">
+      <option name="closed" value="true" />
+      <created>1693320829228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693320829228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="is happy number solution">
+      <option name="closed" value="true" />
+      <created>1693510566653</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693510566653</updated>
+    </task>
+    <task id="LOCAL-00004" summary="working on project related to oops">
+      <option name="closed" value="true" />
+      <created>1693664572973</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693664572973</updated>
+    </task>
+    <task id="LOCAL-00005" summary="completed account class">
+      <option name="closed" value="true" />
+      <created>1693669878916</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693669878916</updated>
+    </task>
+    <task id="LOCAL-00006" summary="timezone class completed">
+      <option name="closed" value="true" />
+      <created>1693823522757</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693823522758</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created a generator instead of a variable.added validation to firstname and lastname">
+      <option name="closed" value="true" />
+      <created>1693825837271</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693825837271</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added the timezone property and the interest logic">
+      <option name="closed" value="true" />
+      <created>1693846309387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693846309387</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added the function to generate confirmation code object">
+      <option name="closed" value="true" />
+      <created>1694010445344</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694010445344</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,7 +253,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="python deep dive day 1 and 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="python deep dive day 1 and 2" />
+    <MESSAGE value="is happy number solution" />
+    <MESSAGE value="working on project related to oops" />
+    <MESSAGE value="completed account class" />
+    <MESSAGE value="timezone class completed" />
+    <MESSAGE value="created a generator instead of a variable.added validation to firstname and lastname" />
+    <MESSAGE value="added the timezone property and the interest logic" />
+    <MESSAGE value="added the function to generate confirmation code object" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the function to generate confirmation code object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -214,6 +279,16 @@
           <url>file://$PROJECT_DIR$/test.py</url>
           <line>37</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Porject_1_oops.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Porject_1_oops.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
