@@ -2,8 +2,10 @@ import decimal
 import numbers
 from datetime import datetime, timedelta
 import itertools
+from collections import namedtuple
 
 global_account_set = set()
+Confirmation = namedtuple("Confirmation", "transaction_code transaction_id account_number raw_dt_utc preferred_dtc ")
 
 
 class Account:
@@ -80,36 +82,52 @@ class Account:
 
     def deposit(self, amount):
         if amount < 0:
-            return self.generate_confirmation_number("declined", self.account_number)
+            return self.generate_confirmation_code("declined", self.account_number)
         else:
             self._balance = self._balance + amount
-            return self.generate_confirmation_number("deposit", self.account_number)
+            return self.generate_confirmation_code("deposit", self.account_number)
 
     def withdrawal(self, amount):
         if self.balance == 0 or (self.balance - amount) < 0 or amount < 0:
-            return self.generate_confirmation_number("declined", self.account_number)
+            return self.generate_confirmation_code("declined", self.account_number)
         else:
             self._balance = self._balance - amount
-            return self.generate_confirmation_number("withdrawal", self.account_number)
+            return self.generate_confirmation_code("withdrawal", self.account_number)
 
     def deposit_interest(self):
         interest_amount = self.balance * (Account.get_interest_rate() / 100)
         self.deposit(interest_amount)
-        return self.generate_confirmation_number("interest_deposit", self.account_number)
+        return self.generate_confirmation_code("interest_deposit", self.account_number)
 
     @classmethod
-    def generate_confirmation_number(cls, transaction_type, acc_num):
+    def generate_confirmation_code(cls, transaction_type, acc_num):
         current_date_time = datetime.now().utcnow().strftime("%Y%m%d%H%M%S")
         return (
             f"{cls.transaction_type[transaction_type]}-{acc_num}-{current_date_time}-{next(cls.global_transaction_id)}"
         )
 
-    def generate_confirmation_number_object(self, code):
-        class ConfirmationCode:
-            def __init__(self, code):
-                self.transaction_code, self.account_number, self.time_utc, self.transaction_id = code.split("-")
+    @staticmethod
+    def generate_confirmation_number_object(confirmation_code, preferred_timezone=None):
+        # X-1234-20230906140927-9
+        parts = confirmation_code.split("-")
+        if len(parts) != 4:
+            raise ValueError("Invalid confirmation code")
+        transaction_code, account_number, raw_dt_utc, transaction_id = parts
+        try:
+            dt_utc = datetime.strptime(raw_dt_utc, "%Y%m%d%H%M%S")
+        except ValueError as ex:
+            raise ValueError("Invalid transaction date time") from ex  # maintains the stack trace
 
-        return ConfirmationCode(code)
+        if preferred_timezone is None:
+            preferred_timezone = Timezone("UTC", 0, 0)
+
+        if not isinstance(preferred_timezone, Timezone):
+            raise ValueError("invalid timezone specified")
+
+        dt_preferred = dt_utc + preferred_timezone.offset
+        dt_preferred_str = f"{dt_preferred.strftime('%Y-%m-%d %H:%M:%S')}  ({preferred_timezone})"
+
+        return Confirmation(transaction_code, transaction_id, account_number, dt_utc.isoformat(), dt_preferred_str)
 
     @classmethod
     def get_interest_rate(cls):
@@ -187,4 +205,4 @@ print(acc_2.balance)
 print(acc_1.withdrawal(50))
 print(acc_2.withdrawal(40))
 
-print(acc_1.timezone)
+print(acc_1.generate_confirmation_number_object('X-1234-20230906142405-9',))
