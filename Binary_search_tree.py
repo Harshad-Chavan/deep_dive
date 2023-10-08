@@ -62,6 +62,49 @@ class BinarySearchTree:
                     break
         return msg
 
+    def BSF(self):
+        from collections import deque
+        current = self.root
+        output_list = []
+        queue = deque()
+        queue.append(current)
+
+        while queue:
+            current = queue.pop()
+            output_list.append(current.value)
+            if current.left:
+                queue.appendleft(current.left)
+            if current.right:
+                queue.appendleft(current.right)
+
+        return output_list
+
+    def DFSInorder(self, node, out_list):
+        print(f"in node {node.value}")
+        if node.left:
+            self.DFSInorder(node.left,out_list)
+        out_list.append(node.value)
+        if node.right:
+            self.DFSInorder(node.right,out_list)
+        return out_list
+
+    def DFSPreorder(self, node, out_list):
+        print(f"in node {node.value}")
+        out_list.append(node.value)
+        if node.left:
+            self.DFSPreorder(node.left,out_list)
+        if node.right:
+            self.DFSPreorder(node.right,out_list)
+        return out_list
+
+    def DFSPostorder(self, node, out_list):
+        print(f"in node {node.value}")
+        if node.left:
+            self.DFSPostorder(node.left, out_list)
+        if node.right:
+            self.DFSPostorder(node.right, out_list)
+        out_list.append(node.value)
+        return out_list
 
 def print_tree(root, level=0, prefix="Root: "):
     if root is not None:
@@ -77,11 +120,18 @@ def print_tree(root, level=0, prefix="Root: "):
 
 mytree = BinarySearchTree()
 mytree.insert(9)
-mytree.insert(4)
 mytree.insert(6)
+mytree.insert(4)
 mytree.insert(20)
 mytree.insert(170)
 mytree.insert(15)
 mytree.insert(1)
+mytree.insert(2)
 print(mytree.lookup(100))
 print_tree(mytree.root)
+
+
+print(mytree.BSF())
+print(mytree.DFSInorder(mytree.root,[]))
+print(mytree.DFSPreorder(mytree.root,[]))
+print(mytree.DFSPostorder(mytree.root,[]))

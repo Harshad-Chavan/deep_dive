@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d37e61-2035-47a4-8224-35b69091d6ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/linked_list_implementation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stack_implementation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph_implementation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matrix_problems.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/method_types.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binary_search_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/Binary_search_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,7 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/harshad/Desktop/workspace/python_deep_dive&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.linked_list_implementation">
+  <component name="RunManager" selected="Python.matrix_problems">
     <configuration name="Binary_search_tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="matrix traversal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="matrix_problems" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,7 +103,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/matrix traversal.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/matrix_problems.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stack_implementation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="method_types" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,7 +124,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stack_implementation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/method_types.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="threading_event" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_deep_dive" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -142,7 +145,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/threading_event.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.linked_list_implementation" />
-        <item itemvalue="Python.stack_implementation" />
+        <item itemvalue="Python.matrix_problems" />
         <item itemvalue="Python.Binary_search_tree" />
-        <item itemvalue="Python.matrix traversal" />
-        <item itemvalue="Python.threading_event" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.method_types" />
+        <item itemvalue="Python.linked_list_implementation" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696527638866</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="stack and linked_list">
+      <option name="closed" value="true" />
+      <created>1696532355829</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696532355829</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,7 +310,8 @@
     <MESSAGE value="Completed !!" />
     <MESSAGE value="threading basics" />
     <MESSAGE value="BST and matrix travesal" />
-    <option name="LAST_COMMIT_MESSAGE" value="BST and matrix travesal" />
+    <MESSAGE value="stack and linked_list" />
+    <option name="LAST_COMMIT_MESSAGE" value="stack and linked_list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -308,16 +320,6 @@
           <url>file://$PROJECT_DIR$/decorators_primer.py</url>
           <line>80</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Porject_1_oops.py</url>
@@ -335,11 +337,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Binary_search_tree.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stack_implementation.py</url>
           <line>24</line>
           <option name="timeStamp" value="15" />
@@ -348,6 +345,16 @@
           <url>file://$PROJECT_DIR$/linked_list_implementation.py</url>
           <line>34</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Binary_search_tree.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/matrix_problems.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
