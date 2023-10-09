@@ -9,6 +9,8 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
         self.current = None
+        self.max_left = 0
+        self.max_right = 0
 
     def insert(self, value):
 
@@ -64,6 +66,7 @@ class BinarySearchTree:
 
     def BSF(self):
         from collections import deque
+
         current = self.root
         output_list = []
         queue = deque()
@@ -82,19 +85,19 @@ class BinarySearchTree:
     def DFSInorder(self, node, out_list):
         print(f"in node {node.value}")
         if node.left:
-            self.DFSInorder(node.left,out_list)
+            self.DFSInorder(node.left, out_list)
         out_list.append(node.value)
         if node.right:
-            self.DFSInorder(node.right,out_list)
+            self.DFSInorder(node.right, out_list)
         return out_list
 
     def DFSPreorder(self, node, out_list):
         print(f"in node {node.value}")
         out_list.append(node.value)
         if node.left:
-            self.DFSPreorder(node.left,out_list)
+            self.DFSPreorder(node.left, out_list)
         if node.right:
-            self.DFSPreorder(node.right,out_list)
+            self.DFSPreorder(node.right, out_list)
         return out_list
 
     def DFSPostorder(self, node, out_list):
@@ -105,6 +108,38 @@ class BinarySearchTree:
             self.DFSPostorder(node.right, out_list)
         out_list.append(node.value)
         return out_list
+
+    def find_number(self, arr=[5, 6, 7, 8, 10, 13, 45]):
+        num = 45
+        left = 0
+        right = len(arr) - 1
+
+        while left <= right:
+            mid = int((left + right) / 2)
+            if arr[mid] == num:
+                return True, mid
+            elif num < arr[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        else:
+            return -1
+
+
+
+
+
+
+    def find_tree_height(self, root):
+        if root is None:
+            return 0  # Height of an empty tree is -1
+
+        left_height = self.find_tree_height(root.left)
+        right_height = self.find_tree_height(root.right)
+
+        # Height of the tree is the maximum of left and right subtree heights plus 1
+        return max(left_height, right_height) + 1
+
 
 def print_tree(root, level=0, prefix="Root: "):
     if root is not None:
@@ -127,11 +162,18 @@ mytree.insert(170)
 mytree.insert(15)
 mytree.insert(1)
 mytree.insert(2)
+mytree.insert(171)
+mytree.insert(173)
+
+
 print(mytree.lookup(100))
 print_tree(mytree.root)
 
 
-print(mytree.BSF())
-print(mytree.DFSInorder(mytree.root,[]))
-print(mytree.DFSPreorder(mytree.root,[]))
-print(mytree.DFSPostorder(mytree.root,[]))
+# print(mytree.BSF())
+
+# print(mytree.DFSInorder(mytree.root,[]))
+# print(mytree.DFSPreorder(mytree.root,[]))
+# print(mytree.DFSPostorder(mytree.root,[]))
+
+print(mytree.find_number())
